@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: wireguard
   namespace: networking
+  annotations:
+    fluxcd.io/automated: "true"  # Enable Flux automation
 spec:
   replicas: 1
   selector:
@@ -14,27 +16,18 @@ spec:
       labels:
         app: wireguard
     spec:
+      serviceAccountName: wireguard
       containers:
         - name: wireguard
           image: lscr.io/linuxserver/wireguard:latest
-          env:
-            - name: PUID
-              value: "1000"
-            - name: PGID
-              value: "1000"
-            - name: TZ
-              value: "Europe/Athens"
-          volumeMounts:
-            - name: config
-              mountPath: /config
-          ports:
-            - containerPort: 51820
-              protocol: UDP
           securityContext:
             capabilities:
               add: ["NET_ADMIN", "SYS_MODULE"]
+          volumeMounts:
+            - name: config
+              mountPath: /config
       volumes:
         - name: config
           secret:
             secretName: wireguard-config
-      hostNetwork: true  # Required for UDP port binding
+      hostNetwork: true
