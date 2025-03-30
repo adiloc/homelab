@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: networking
 resources:
   - deployment.yaml
+  - rbac.yaml
   - service.yaml
 secretGenerator:
   - name: wireguard-config
