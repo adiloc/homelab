@@ -21,13 +21,27 @@ spec:
         - name: wireguard
           image: lscr.io/linuxserver/wireguard:latest
           securityContext:
+            privileged: true  # Required for hardened kernels
             capabilities:
               add: ["NET_ADMIN", "SYS_MODULE"]
           volumeMounts:
-            - name: config
-              mountPath: /config
+            - name: wg-config  # Changed from generic 'config'
+              mountPath: /etc/wireguard  # WireGuard's expected config location
+            - name: lib-modules
+              mountPath: /lib/modules  # Required for kernel modules
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: "Etc/UTC"
       volumes:
-        - name: config
+        - name: wg-config
           secret:
             secretName: wireguard-config
+            optional: false  # Ensure pod fails if secret missing
+        - name: lib-modules
+          hostPath:
+            path: /lib/modules
       hostNetwork: true
