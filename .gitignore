@@ -1,2 +1,3 @@
 *.agekey
 .sops_age_key
+wg0.conf
