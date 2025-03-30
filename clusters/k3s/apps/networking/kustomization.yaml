@@ -1,5 +1,18 @@
 ---
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-resources:
-  - wireguard/
+metadata:
+  name: networking
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: "./apps/networking/wireguard"
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
+  targetNamespace: networking
+  prune: true
