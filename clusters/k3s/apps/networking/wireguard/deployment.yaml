@@ -5,7 +5,7 @@ metadata:
   name: wireguard
   namespace: networking
   annotations:
-    fluxcd.io/automated: "true"  # Enable Flux automation
+    fluxcd.io/automated: "true"
 spec:
   replicas: 1
   selector:
