@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: "./apps/networking/wireguard"
+  path: "./clusters/k3s/apps/networking/wireguard"
   sourceRef:
     kind: GitRepository
     name: flux-system
