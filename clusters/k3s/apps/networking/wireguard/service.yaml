@@ -5,12 +5,13 @@ metadata:
   name: wireguard
   namespace: networking
 spec:
+  externalTrafficPolicy: Local
   type: NodePort
   ports:
     - name: wg-udp
       port: 51820
       targetPort: 51820
       protocol: UDP
-      nodePort: 31820
+      nodePort: 31821
   selector:
     app: wireguard
