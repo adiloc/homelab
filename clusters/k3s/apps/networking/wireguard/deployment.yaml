@@ -20,6 +20,7 @@ spec:
       containers:
         - name: wireguard
           image: lscr.io/linuxserver/wireguard:latest
+          imagePullPolicy: Always  # Force pull new image on update
           securityContext:
             privileged: true  # Required for hardened kernels
             capabilities:
