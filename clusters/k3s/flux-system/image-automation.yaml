@@ -1,0 +1,25 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: wireguard-automation
+  namespace: flux-system
+spec:
+  schedule: "0 3 * * *"  # Runs daily at 3 AM
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: flux@example.com
+        name: flux
+      messageTemplate: '[automated] Update WireGuard to latest image'
+    push:
+      branch: main
+  update:
+    path: "./clusters/k3s/apps/networking/wireguard"
+    strategy: Setters
