@@ -1,7 +1,19 @@
 ---
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: fluxcd.io/v1
 kind: Kustomization
-resources:
-  - cert-manager/cluster-issuer.enc.yaml
-  - ingress/prosody-ingress.enc.yaml
-  - namespace.yaml
+metadata:
+  name: networking
+spec:
+  resources:
+    - networking/cert-manager/cluster-issuer.enc.yaml
+    - networking/ingress/prosody-ingress.enc.yaml
+  
+  secretGenerator:
+    - name: networking-secrets
+      files:
+        - networking/cert-manager/cluster-issuer.enc.yaml
+        - networking/ingress/prosody-ingress.enc.yaml
+
+  commonLabels:
+    app: my-app
+
