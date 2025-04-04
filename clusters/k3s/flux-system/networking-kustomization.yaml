@@ -16,3 +16,5 @@ spec:
       name: sops-age
   targetNamespace: networking
   prune: true
+  dependsOn:
+        - name: infrastructure-networking
