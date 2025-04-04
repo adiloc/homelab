@@ -2,6 +2,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - cert-manager/cluster-issuer.yaml
-  - ingress/prosody-ingress.yaml
+  - cert-manager/cluster-issuer.enc.yaml
+  - ingress/prosody-ingress.enc.yaml
   - namespace.yaml
