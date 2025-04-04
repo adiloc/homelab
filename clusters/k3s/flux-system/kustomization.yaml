@@ -1,16 +1,11 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-spec:
-  resources:
-    - gotk-components.yaml
-    - gotk-sync.yaml
-    - networking-kustomization.yaml
-    - image-automation.yaml
-    - image-policy.yaml
-    - prosody-kustomization.yaml
-    - infrastructure-kustomization.yaml
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
+resources:
+  - gotk-components.yaml
+  - gotk-sync.yaml
+  - networking-kustomization.yaml
+  - image-automation.yaml
+  - image-policy.yaml
+  - prosody-kustomization.yaml
+  - infrastructure-kustomization.yaml
