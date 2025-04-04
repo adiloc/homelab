@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prosody
+  namespace: networking
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prosody
+  template:
+    metadata:
+      labels:
+        app: prosody
+    spec:
+      serviceAccountName: prosody
+      containers:
+        - name: prosody
+          image: prosody/prosody:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5222  # Client-to-server
+              name: xmpp-c2s
+            - containerPort: 5269  # Server-to-server
+              name: xmpp-s2s
+            - containerPort: 5280  # HTTP services
+              name: http
+            - containerPort: 5281  # HTTPS services
+              name: https
+          volumeMounts:
+            - name: prosody-config
+              mountPath: /etc/prosody/prosody.cfg.lua
+              subPath: prosody.cfg.lua
+            - name: prosody-data
+              mountPath: /var/lib/prosody
+            - name: tls-cert
+              mountPath: /etc/prosody/certs
+              readOnly: true
+          env:
+            - name: TZ
+              value: "Etc/UTC"
+      volumes:
+        - name: prosody-config
+          secret:
+            secretName: prosody-config
+            optional: false
+        - name: prosody-data
+          persistentVolumeClaim:
+            claimName: prosody-data
+        - name: tls-cert
+          secret:
+            secretName: prosody-tls-cert
