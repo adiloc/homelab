@@ -7,3 +7,4 @@ resources:
   - networking-kustomization.yaml
   - image-automation.yaml
   - image-policy.yaml
+  - prosody-kustomization.yaml
