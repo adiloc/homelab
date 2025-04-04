@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: 
+      valueFrom:
+        secretKeyRef:
+          name: prosody-secrets  # Name of the secret
+          key: email                      # Key in the secret that holds the email
+    privateKeySecretRef:
+      name: letsencrypt-prod-key   # Secret to store the private key
+    solvers:
+      - http01:
+          ingress:
+            class: nginx  # Ensure this matches your Ingress controller class (usually "nginx")
