@@ -8,3 +8,4 @@ resources:
   - image-automation.yaml
   - image-policy.yaml
   - prosody-kustomization.yaml
+  - infrastructure-kustomization.yaml
