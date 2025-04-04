@@ -9,3 +9,8 @@ resources:
   - image-policy.yaml
   - prosody-kustomization.yaml
   - infrastructure-kustomization.yaml
+spec:
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
