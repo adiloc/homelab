@@ -1,60 +1,45 @@
-{
-	"apiVersion": "ENC[AES256_GCM,data:mO0uaFH19E6QvoWBQvf5cIoGeeA=,iv:v9O2Ws+k1ZWC7bIfpRX2fNSpBw0FjTgJ6KVsL07dc30=,tag:fItRCnup/kXGOXUkd2StTw==,type:str]",
-	"kind": "ENC[AES256_GCM,data:F0CajAZ+iw==,iv:4OH7zPHBYtdMAaLRzEzIlzCux5ur43gzQe8ioD1qbH8=,tag:T8sgM1SZTqQhP2lvwfrdNg==,type:str]",
-	"metadata": {
-		"name": "ENC[AES256_GCM,data:DhK5YOrbWw==,iv:WdNOFdspylwEFGslJMAE9DZWd4udVl4cXmuLilJdhfw=,tag:dlIXu/4ouSKVSBg/6BwLAw==,type:str]",
-		"namespace": "ENC[AES256_GCM,data:mxs9FM8ns5FdkA==,iv:FzbFt6RdZ22NXZkpr7QULfvF/5umQXtcgwsafVyBDys=,tag:MlTLn1FME7zDeoQxJsBiXA==,type:str]",
-		"annotations": {
-			"kubernetes.io/ingress.class": "ENC[AES256_GCM,data:9vn8PQI=,iv:NqE5/51yX+AhSJ72eYWFfUQUZN6w0X+bPFZWbZOgk2w=,tag:k1vxbGO5Y5VHV3zQVuf4aA==,type:str]",
-			"cert-manager.io/cluster-issuer": "ENC[AES256_GCM,data:9Y7mZ39boRmescYx2Ry41Q==,iv:bgV0uxFo/EMR9cyj0igl9ycQ8NsF9e2SvlGLXaAFTMA=,tag:Kcjon3JZ4+u88g1MjR6gaQ==,type:str]",
-			"nginx.ingress.kubernetes.io/ssl-redirect": "ENC[AES256_GCM,data:JrmI0A==,iv:UWVgR/E/pOxHFOpMRYeLaM4yBs1Q3DZRBN9xCVPOxi4=,tag:J8Pt5Esepqn9TH358Bs8aA==,type:str]",
-			"nginx.ingress.kubernetes.io/proxy-read-timeout": "ENC[AES256_GCM,data:hBavpQ==,iv:rA4qRs/S69QyqOnQQp46VH4o9arppxzzjqcq9pvek08=,tag:n2lkJ8mIXXgKRFruyOQeZw==,type:str]",
-			"nginx.ingress.kubernetes.io/proxy-send-timeout": "ENC[AES256_GCM,data:gmoxcw==,iv:NOxZcnCXBivAM9vWSiMalJ1+SpuIb8cWtBt3ohxNzt4=,tag:FkRr4kYnDwQqf8jB1CAXJA==,type:str]",
-			"nginx.ingress.kubernetes.io/proxy-http-version": "ENC[AES256_GCM,data:/c6s,iv:XN1HXnxGEQxH6UwSvvrRmhmwW5xlB4TCyoQh9BuOAGI=,tag:D8afn7/PddHsowzcThkMvg==,type:str]",
-			"nginx.ingress.kubernetes.io/configuration-snippet": "ENC[AES256_GCM,data:bPjfkCiJiNHv/G8b/nPddH7wYnH0JNq1G8n1nAHD3WCFhf41xzs2F71sHR/cqy+21sJf6TlIsTFa1bkX3fCj4WOJqldoj17IQtuhLRlwdA==,iv:6CrIziwqbqMXfK4Ii5QYTCXneLI6K+w3hJ0t7vPU+xc=,tag:rq9EWOwbkKcHc4IJCunboQ==,type:str]"
-		}
-	},
-	"spec": {
-		"tls": [
-			{
-				"hosts": [
-					"ENC[AES256_GCM,data:OnGVlqMniovbhA==,iv:5EbSE0DQBoxeLfOHs2xlgd7qORsRv4x+yzms+8hW2o4=,tag:r0yODz7SHmUjvwvhaY9jKA==,type:str]"
-				],
-				"secretName": "ENC[AES256_GCM,data:TtNiU1M7/Y59heD8sMiClA==,iv:qvXrqVZvYKWpGtyiuda7lrmRXo0Lg7zi2hbyBe+YnRo=,tag:fAJkcvga7tR+VzO0Apl2kw==,type:str]"
-			}
-		],
-		"rules": [
-			{
-				"host": "ENC[AES256_GCM,data:xSjlQej5jkDkkw==,iv:VnuuZWpBG4Hr/zx2XkwfhXyTlT/uiSGXO3jhAP7Phz8=,tag:bx+t0WVW4PEOU/A/saTBDQ==,type:str]",
-				"http": {
-					"paths": [
-						{
-							"path": "ENC[AES256_GCM,data:XA==,iv:W/RWfV4z++0aeYMHfXdNdyjFnf+Bt8br5HIFkJkdoj4=,tag:GdRG8Wyiqa7BNLrUUQ8ZeA==,type:str]",
-							"pathType": "ENC[AES256_GCM,data:HVzlS7A1,iv:dOJSnX7LZyS3FYijW/aD14kQij2Vq9dvKCEJWPH/uUk=,tag:AGfxDDmBonfSZIiEXAalFw==,type:str]",
-							"backend": {
-								"service": {
-									"name": "ENC[AES256_GCM,data:EqAgmOmc/w==,iv:VzfyND0yuuk1GNY+GE0In1W32nAwqCmp3lAzoUqqYXs=,tag:MlLPL+mpcjktH6ByKkhb2g==,type:str]",
-									"port": {
-										"number": "ENC[AES256_GCM,data:YQECNA==,iv:y6/xlXDh3VKigX+OdLtU6SRkKgs9R1lLUaUpj+6GJGE=,tag:bFkBblf0mY1r580z7D2W8w==,type:int]"
-									}
-								}
-							}
-						}
-					]
-				}
-			}
-		]
-	},
-	"sops": {
-		"age": [
-			{
-				"recipient": "age1tg7mxj9xaa72e3pr2wvwg0w9c0drvc8anfldrzksxhsmmn3rqsnqe5rmfv",
-				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyRlYwZXMwV0FZZXZnSnRU\nZmdUVlNUK3E0Zk1hME5DdW8vZnpCSm5yNGdvCjBvbTR2MkprVmh4YTk5RmdGdnRs\nQnlTa2NpNlRGdWFHUnkwV3RBN3ZBancKLS0tIDdjMVpLV2FpaUNLMnN0R1VpQWxY\ncDJ6ZXRRa2xPR1NYaE5QSCtJUUNOOTgK5UNOF+tg1U9SaIBbrZ2gdAFcJNAC9mT2\nDsi5W4VLCpxUEwK8hFD4uLfVkQctIIik8gzwy3oEjAv5ngV+HVZXbw==\n-----END AGE ENCRYPTED FILE-----\n"
-			}
-		],
-		"lastmodified": "2025-04-04T15:12:16Z",
-		"mac": "ENC[AES256_GCM,data:igd1N3o4lfid0T5KGhV4LL2pJCKLoDvtighLVOhiC6bDsJfDae4LgHZZmiHXKfm+Tpfi6m+bWP0lLRqT6aM5wc2KgeANc7cvzh7c2X1+DcvpuaF25nTVzt59MbeIxlPB2panVkFd9N5AxjI4SR26PfSyuzrZcJx477hOvL1MOFk=,iv:xdLIx0LFQY46ioTSCZaqSzQVZQYYRuZa4o+mnt8u7bg=,tag:W3hMCd22kNqV/eOFmS/cAA==,type:str]",
-		"unencrypted_suffix": "_unencrypted",
-		"version": "3.10.0"
-	}
-}
+apiVersion: ENC[AES256_GCM,data:WA6n/Oz4wUfMkHV3P07mSXPBI0w=,iv:M3SLCHabauytAu9ENQZEQW9R9Dr48VwGfxfPxBDk+/A=,tag:pcqdWINq4ZzIdKjO08WnQw==,type:str]
+kind: ENC[AES256_GCM,data:ZDW3/PEk+w==,iv:PxMXwA+OsqaihHFI4PaR/e+eMQCUKKi8v3Wf5XZ3Xko=,tag:5fixvVemcRDBk61kJuHEkA==,type:str]
+metadata:
+    name: ENC[AES256_GCM,data:IW+QQh+f7A==,iv:Cw0K9VYkBaRl0I4XdRQoLFPtzCqQJhsjV5SwM8CYAx4=,tag:d6dDPcnXhoD46Uwcg+ISJw==,type:str]
+    namespace: ENC[AES256_GCM,data:w37HX0Hd3xiO7g==,iv:LQpE+T6uS3Y0ckWm/RNlzKYQdc9H10UwbmP4L0b6s4c=,tag:NkO17D338D/Rl6GV3tM0+g==,type:str]
+    annotations:
+        kubernetes.io/ingress.class: ENC[AES256_GCM,data:oNMXOz4=,iv:UAAMU+V9+ey/S+76ZTJ5Gdo90oO4EG0EtUV+1e96rkc=,tag:Ss1oxQp60H7z1NpAsOvIMA==,type:str]
+        cert-manager.io/cluster-issuer: ENC[AES256_GCM,data:jCGd40g/usL98HOV7cTNBQ==,iv:hWnGbf9igUntV5aw8WxZHMdF1n7r40DL/qaqONfHq1E=,tag:rzhrxKrh9t0aqJok/JG/aA==,type:str]
+        nginx.ingress.kubernetes.io/ssl-redirect: ENC[AES256_GCM,data:zU10/g==,iv:XLe7xMrOC5+ZQ27dTAtAZkuW8s6EUYCGNlD04OOTCz4=,tag:3/IpTMbiIhnly3ebw90B+w==,type:str]
+        nginx.ingress.kubernetes.io/proxy-read-timeout: ENC[AES256_GCM,data:qULXyg==,iv:Z8OGYmG31VOtewazJhaVt0EDjTIjWzshOWLJo9A5xco=,tag:UClG+nN+bD1XKhufstj4yg==,type:str]
+        nginx.ingress.kubernetes.io/proxy-send-timeout: ENC[AES256_GCM,data:AHq/Tg==,iv:wU3pAs6BFmc6a8NC9y/8QhC6TFoD8AWSoehreZixh2o=,tag:wYk41gS8qGruA7Vdqvdz4g==,type:str]
+        #ENC[AES256_GCM,data:eyS6gCmzU+arFha2Z+UYrN1uMc2FOwqhnoBxTq4=,iv:CH0zn2MRdHbxkdWSl+ziyqDvFGVY9R8P646AepxKQFI=,tag:zeesbSkfw13NeZXTCZT2iQ==,type:comment]
+        nginx.ingress.kubernetes.io/proxy-http-version: ENC[AES256_GCM,data:gmiU,iv:ns2G0J2jZJVwsaWlJwzQoiJ/1j9CGP+cIASNBW/o34g=,tag:uZ9BroOJ77pAnO5fwdSAFQ==,type:str]
+        nginx.ingress.kubernetes.io/configuration-snippet: ENC[AES256_GCM,data:L5ETObZ/0y7vYFPDkJ4CehFIZuLswnGI+liFst0cYdIxm2KZd1Y/M6AT7pcEs1Q6eW3FXIPKs5REpeL8rkpXGmT+OVb4dE8deaDIsbmTXg==,iv:0G/a8/+u0MowEsVwSXVjo1YryfWtAw8J5tTjlvZo+UM=,tag:goDIWqfBWPOM6V0/8sVmUg==,type:str]
+spec:
+    tls:
+        - hosts:
+            - ENC[AES256_GCM,data:uBIkzEK6pVUNAw==,iv:VrbJBG1S/m6e9v3mo97hwSeuRUVExdrJSDxda9R0+uU=,tag:Pa5zBd/xFQCrofmpDfBiHA==,type:str]
+          secretName: ENC[AES256_GCM,data:0ZGA6KbZNqZcByhA5xXbNA==,iv:N6hDvons6J88IdGK0sZ31aYyD1WwQkS7QolDhfK2SjE=,tag:hzYPHYFl/pFRDUEE601esw==,type:str]
+    rules:
+        - host: ENC[AES256_GCM,data:3pjolaAF044xLw==,iv:Vn9eh7CJNgqhxVmNgoZHEE+TlCDE5uc2p0oEIMeeaOQ=,tag:Jt5btByLs2ZznV7ZOQf+VQ==,type:str]
+          http:
+            paths:
+                - path: ENC[AES256_GCM,data:TQ==,iv:N2QjjriHEluo+AjwD7HNpDzfJ63YntWf+oKo5EBQLHI=,tag:519YLCzcvMF/ON/BpMey3A==,type:str]
+                  pathType: ENC[AES256_GCM,data:mFHkTYrs,iv:Y7McUJaANcWYa5gBjRYqmQvTERsKDYRAaWZpu/2A+0Y=,tag:5x/uvBowQ6ANGyrw1umw5g==,type:str]
+                  backend:
+                    service:
+                        name: ENC[AES256_GCM,data:QMjPKJBbmA==,iv:ewGVUJzlLpebw1fKbfChGWui6gElNsFsKA5rD6eZHPE=,tag:L7BQklK8imhoFDhyTc7qKQ==,type:str]
+                        port:
+                            number: ENC[AES256_GCM,data:RH7WgA==,iv:BCGWxJ0DZf9rOlZ+J224mlH6WnK6t0U+YdTmL8v6LP0=,tag:iFCP8qT2uCQ3SNpcrkclzw==,type:int]
+sops:
+    age:
+        - recipient: age1tg7mxj9xaa72e3pr2wvwg0w9c0drvc8anfldrzksxhsmmn3rqsnqe5rmfv
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBlTU9nUWR2dXVwOUdMUWxF
+            Qm1tVFJQeTNoYUxkSS9Oc3pLeS9xeVVKb21BCi95S2t2amJPSlI2c0M0OTZCTUFY
+            VEdXTW5SWnpmSk9kSHVSa0t5UkU1dHcKLS0tIDJsSFhTaDZmelk3UHVzb0dvS2d0
+            RmxQbXh6YXI4eHNUZHBUa29XMDMvL00KEuQ7SWN6yvHk72WiKBTvCHnkLaakw4sx
+            4ZC3e54vE4kyihhUJY/yrQecoihRW9n4vCi24bdrrZTqghlGC74mUQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-04T20:36:18Z"
+    mac: ENC[AES256_GCM,data:YkcaAve4Y7JzLOb3cVCOyE3TUWGzl9KMti+t3fr5iu8rj50sR2xFT+ZGxvV3KZDK/VW5sWQCuZcTYSLzbvCengp06DDnapj5zoC1V5VQtIxs0lxTJvHUouyB48sI002kC3RLJz3fOEKRPCgSInHT4ivn5cGR5TzhNdNq07vTyWQ=,iv:QOekBm3jTVSRZBtENjIe46HLEqUojqaEILd6CGSU/lE=,tag:hIBkcpEl22jYoGT8dnVxSw==,type:str]
+    unencrypted_suffix: _unencrypted
+    version: 3.10.0
