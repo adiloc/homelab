@@ -4,14 +4,19 @@ kind: Kustomization
 namespace: networking
 resources:
   - deployment.yaml
-  - service.yaml
   - rbac.yaml
-  - pvc.yaml
+  - service.yaml
 images:
   - name: prosody/prosody
     newName: prosody/prosody
-    newTag: latest  # Will be maintained by Flux
+    newTag: latest
 secretGenerator:
+  - name: prosody-certs
+    files:
+      - tls.key=tls.key.enc
+      - tls.crt=tls.crt.enc 
+    options:
+      disableNameSuffixHash: true
   - name: prosody-config
     files:
       - prosody.cfg.lua=prosody.cfg.lua.enc
