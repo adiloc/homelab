@@ -2,5 +2,3 @@
 .sops_age_key
 wg0.conf
 prosody.cfg.lua
-prosody-ingress.yaml
-cluster-issuer.yaml
