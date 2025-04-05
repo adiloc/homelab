@@ -20,27 +20,27 @@ spec:
       containers:
         - name: prosody
           image: prosody/prosody:latest
-          imagePullPolicy: Always  # Force pull new image on update
+          imagePullPolicy: Always
           ports:
-            - containerport: 5222  # client connections
-            - containerport: 5269  # server-to-server
-            - containerport: 5280  # http for bosh
-          volumemounts:
+            - containerPort: 5222  # client connections
+            - containerPort: 5269  # server-to-server
+            - containerPort: 5280  # http for bosh
+          volumeMounts:
             - name: prosody-certs
-              mountpath: /etc/prosody/certs
+              mountPath: /etc/prosody/certs
             - name: prosody-config
-              mountpath: /etc/prosody/prosody.cfg.lua
-              subpath: prosody.cfg.lua
+              mountPath: /etc/prosody/prosody.cfg.lua
+              subPath: prosody.cfg.lua
             - name: pid-dir
               mountPath: /var/run/prosody
       volumes:
         - name: prosody-certs
           secret:
             secretName: prosody-certs
-            optional: false  # Ensure pod fails if secret missing
+            optional: false
         - name: prosody-config
           secret:
             secretName: prosody-config
-            optional: false  # Ensure pod fails if secret missing
+            optional: false
         - name: pid-dir
           emptyDir: {}
