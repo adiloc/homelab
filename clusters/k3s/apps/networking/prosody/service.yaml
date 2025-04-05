@@ -5,22 +5,13 @@ metadata:
   name: prosody
   namespace: networking
 spec:
+  externalTrafficPolicy: Local
   type: NodePort
   ports:
-    - name: c2s
+    - name: xmpp-tcp
       port: 5222
       targetPort: 5222
       protocol: TCP
-      nodePort: 32222
-    - name: s2s
-      port: 5269
-      targetPort: 5269
-      protocol: TCP
-      nodePort: 32269
-    - name: http
-      port: 5280
-      targetPort: 5280
-      protocol: TCP
-      nodePort: 32280
+      nodePort: 30522
   selector:
     app: prosody
