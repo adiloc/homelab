@@ -37,5 +37,6 @@ spec:
             secretName: prosody-certs
             optional: false  # Ensure pod fails if secret missing
         - name: prosody-config
-          configMap:
-            name: prosody-config
+          secret:
+            secretName: prosody-config
+            optional: false  # Ensure pod fails if secret missing
