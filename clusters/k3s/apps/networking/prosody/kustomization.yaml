@@ -11,12 +11,6 @@ images:
     newName: prosody/prosody
     newTag: latest
 secretGenerator:
-  - name: prosody-certs
-    files:
-      - tls.key=tls.key.enc
-      - tls.crt=tls.crt.enc 
-    options:
-      disableNameSuffixHash: true
   - name: prosody-config
     files:
       - prosody.cfg.lua=prosody.cfg.lua.enc
