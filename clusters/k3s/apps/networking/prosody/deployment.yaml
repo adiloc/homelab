@@ -16,6 +16,9 @@ spec:
       labels:
         app: prosody
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       serviceAccountName: prosody
       containers:
         - name: prosody
