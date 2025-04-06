@@ -6,6 +6,7 @@ resources:
   - deployment.yaml
   - rbac.yaml
   - service.yaml
+  - pvc.yaml
 images:
   - name: prosody/prosody
     newName: prosody/prosody
