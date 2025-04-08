@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wireguard
-  namespace: networking
+  namespace: vpn
   annotations:
     fluxcd.io/automated: "true"
 spec:
