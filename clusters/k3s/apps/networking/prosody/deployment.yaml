@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prosody
-  namespace: networking
+  namespace: xmpp
   annotations:
     fluxcd.io/automated: "true"
 spec:
@@ -16,28 +16,29 @@ spec:
       labels:
         app: prosody
     spec:
-      securityContext:
-        runAsUser: 1000
-        fsGroup: 1000
       serviceAccountName: prosody
+      securityContext:  # Add this security context for the pod
+        fsGroup: 1000  # Use an appropriate group ID
       containers:
         - name: prosody
           image: prosody/prosody:latest
           imagePullPolicy: Always
+          securityContext:  # Add this security context for the container
+            privileged: true  # Or use more specific capabilities instead
           ports:
-            - containerPort: 5222  # client connections
-            - containerPort: 5269  # server-to-server
-            - containerPort: 5280  # http for bosh
+            - containerPort: 5222
           volumeMounts:
             - name: prosody-certs
               mountPath: /etc/prosody/certs
             - name: prosody-config
               mountPath: /etc/prosody/prosody.cfg.lua
               subPath: prosody.cfg.lua
-            - name: pid-dir
-              mountPath: /var/run/prosody
             - name: prosody-data
               mountPath: /var/lib/prosody
+            - name: prosody-logs
+              mountPath: /var/log/prosody
+            - name: pid-dir
+              mountPath: /var/run/prosody
       volumes:
         - name: prosody-certs
           secret:
@@ -46,9 +47,11 @@ spec:
         - name: prosody-config
           secret:
             secretName: prosody-config
-            optional: false
-        - name: pid-dir
-          emptyDir: {}
+            optional: false  # Ensure pod fails if secret missing
         - name: prosody-data
           persistentVolumeClaim:
             claimName: prosody-data
+        - name: prosody-logs
+          emptyDir: {}
+        - name: pid-dir
+          emptyDir: {}
