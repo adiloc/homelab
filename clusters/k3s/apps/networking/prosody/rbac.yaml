@@ -4,22 +4,24 @@ kind: ServiceAccount
 metadata:
   name: prosody
   namespace: xmpp
+
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: prosody
-  namespace: networking
+  namespace: xmpp
 rules:
 - apiGroups: [""]
   resources: ["pods", "pods/log"]
   verbs: ["get", "list", "watch"]
+
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: prosody
-  namespace: networking
+  namespace: xmpp
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -27,4 +29,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: prosody
-  namespace: networking
+  namespace: xmpp

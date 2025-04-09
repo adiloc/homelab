@@ -45,4 +45,3 @@ spec:
         - name: lib-modules
           hostPath:
             path: /lib/modules
-      hostNetwork: true

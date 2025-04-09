@@ -14,7 +14,7 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
-  targetNamespace: networking
+  targetNamespace: xmpp
   prune: true
   dependsOn:
         - name: flux-system
