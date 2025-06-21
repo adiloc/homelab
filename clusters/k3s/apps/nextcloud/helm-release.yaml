@@ -28,4 +28,27 @@ spec:
       tls:
        - secretName: nextcloud-tls
          hosts:
-           - nextcloud.homelab.local 
+           - nextcloud.homelab.local
+    nextcloud:
+      username:
+        valueFrom:
+          secretKeyRef:
+            name: nextcloud-secrets
+            key: nextcloud-username
+      password:
+        valueFrom:
+          secretKeyRef:
+            name: nextcloud-secrets
+            key: nextcloud-password
+    mariadb:
+      auth:
+        rootPassword:
+          valueFrom:
+            secretKeyRef:
+              name: nextcloud-secrets
+              key: mariadb-root-password
+        password:
+          valueFrom:
+            secretKeyRef:
+              name: nextcloud-secrets
+              key: mariadb-password 
