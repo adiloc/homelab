@@ -3,4 +3,9 @@ kind: Kustomization
 resources:
   - helm-repository.yaml
   - helm-release.yaml
-  - secrets.yaml 
+secretGenerator:
+  - name: nextcloud-secrets
+    envs:
+      - secrets.yaml
+    options:
+      disableNameSuffixHash: true 
