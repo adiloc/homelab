@@ -9,3 +9,4 @@ resources:
   - image-policy.yaml
   - prosody-kustomization.yaml
   - infrastructure-kustomization.yaml
+  - nextcloud-kustomization.yaml
